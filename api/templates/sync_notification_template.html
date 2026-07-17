@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<body style="font-family: Arial, sans-serif; color: #333;">
+  <p>Hi,</p>
+
+  <p>The following documents have been successfully ingested into the knowledge base.</p>
+
+  {% if documents %}
+  <table style="border-collapse: collapse; width: 100%; margin-top: 15px;">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th style="border: 1px solid #ddd; text-align: left; padding: 8px;">Document Name</th>
+        <th style="border: 1px solid #ddd; text-align: left; padding: 8px;">Sync Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for doc in documents %}
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 8px;">{{ doc.document_name }}</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">
+          {% if "Success" in doc.sync_status %}
+          <span style="color: green; font-weight: bold;">{{ doc.sync_status }}</span>
+          {% elif "Fail" in doc.sync_status %}
+          <span style="color: red; font-weight: bold;">{{ doc.sync_status }}</span>
+          {% else %}
+          {{ doc.sync_status }}
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+
+  {% if additional_message %}
+  <p style="margin-top: 15px;">{{ additional_message }}</p>
+  {% endif %}
+
+  <p style="margin-top: 20px;">Regards,<br>{{ sender_name }}</p>
+</body>
+
+</html>

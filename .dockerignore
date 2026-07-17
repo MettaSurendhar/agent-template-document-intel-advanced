@@ -1,0 +1,7 @@
+.venv
+.github
+.git
+.env
+.gitignore
+.pre-commit-config.yaml
+.ruff_cache

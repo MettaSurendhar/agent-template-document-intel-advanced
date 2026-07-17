@@ -1,0 +1,75 @@
+[project]
+name = "agents-docintel-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "boto3>=1.40.8",
+    "datargs>=1.1.0",
+    "fastapi>=0.116.1",
+    "jinja2>=3.1.6",
+    "opensearch-py>=3.0.0",
+    "pydantic>=2.11.7",
+    "pyjwt[crypto]>=2.10.1",
+    "python-dotenv>=1.1.1",
+    "uvicorn[standard]>=0.35.0",
+    "pydantic[email]>=2.11.7",
+
+    "unoconv>=0.9.0",    
+    "pdfminer.six>=20240706", 
+    "python-magic>=0.4.27",
+]
+
+[tool.uv]
+dev-dependencies = [
+  "pre-commit>=3.8.0",
+  "detect-secrets>=1.5.0",
+  "mypy>=1.15.0",
+  "types-croniter>=5.0.1.20241205",
+  "pytest>=8.3.4",
+  "ruff>=0.9.7",
+]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+pythonVersion = "3.12"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+  "E",    # pycodestyle
+  "F",    # Pyflakes
+  "UP",   # pyupgrade
+  "B",    # flake8-bugbear
+  "SIM",  # flake8-simplify
+  "I",    # isort
+  "D",    # pydocstyle
+  "C401", # flake8-comprehensions: unnecessary-generator-set
+  "C402", # flake8-comprehensions: unnecessary-generator-dict
+  "C403", # flake8-comprehensions: unnecessary-list-comprehension-set
+  "C404", # flake8-comprehensions: unnecessary-list-comprehension-dict
+  "C405", # flake8-comprehensions: unnecessary-literal-set
+  "W605", # pycodestyle: invalid-escape-sequence
+]
+
+# Ignore D100 Missing docstring in public module
+ignore = ["D100"]
+[tool.ruff.lint.per-file-ignores]
+# Also ignore `D104` in all `__init__.py` files.
+"__init__.py" = ["D104"]
+"tests/*.py" = ["D"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.pytest.ini_options]
+minversion = "7"
+testpaths = ["tests"]
+log_cli_level = "INFO"
+xfail_strict = true
+addopts = ["-ra", "--strict-config", "--strict-markers"]
+filterwarnings = ["error", "ignore::DeprecationWarning"]
