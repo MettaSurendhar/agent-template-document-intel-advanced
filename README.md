@@ -2,7 +2,7 @@
 
 [#document-intelligence-agent-template](#document-intelligence-agent-template)
 
-A production-grade template for building a **team-scoped, citation-grounded document Q&A agent**. Includes RAG retrieval over AWS Bedrock Knowledge Bases, OpenSearch-backed metadata/audit, dual-mode JWT/Azure AD auth, and document ingestion with format conversion. 📄🤖
+A production-grade template for building a **team-scoped, citation-grounded document Q&A agent**. Includes RAG retrieval over AWS Bedrock Knowledge Bases, OpenSearch-backed metadata/audit, dual-mode JWT/Azure AD auth, and document ingestion with format conversion.
 
 ## Which tier do I need?
 
