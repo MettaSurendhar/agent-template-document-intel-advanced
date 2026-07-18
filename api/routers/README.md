@@ -15,8 +15,8 @@ One file per resource. Each router owns its HTTP surface and delegates persisten
 | `agents.py` | The RAG agent itself | `/converse`, `/questions/recent`, `/questions/suggest`, `/languages` — see `CLAUDE.md` §5 for the `/converse` flow in detail |
 | `emails.py` | Notifications | sync notifications, shared-summary emails |
 | `audit.py` | Audit trail | query audit log events |
-| `check_uploads_task.py` *(Document AI variant only)* | Background sync status polling | |
-| `private_search.py` *(Document AI variant only)* | Search over a user's private (non-team) documents | |
+| `check_uploads_task.py` *(optional, not every fork needs this)* | Background sync status polling | |
+| `private_search.py` *(optional, not every fork needs this)* | Search over a user's private (non-team) documents | |
 
 Not every variant needs every router — `check_uploads_task.py` and `private_search.py` are examples of vertical-specific additions; don't feel obligated to keep them if your fork doesn't need per-user private document search.
 
