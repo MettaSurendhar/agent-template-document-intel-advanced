@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This file guides Claude (and Claude Code) when working in this repository. This repo is a **template**, generalized from two production POCs — `Document AI` and `RPG Document AI` — in [Agent-Catalog](https://github.com/MettaSurendhar/Agent-Catalog). Its job is to give anyone a working, opinionated starting point for building a **document-intelligence RAG agent** for a new vertical (legal docs, HR policies, SOPs, spec sheets, whatever), without re-deriving the retrieval/auth/audit plumbing from scratch.
+This file guides Claude (and Claude Code) when working in this repository. This repo is a **template** for building a **document-intelligence RAG agent** for any vertical (legal docs, HR policies, SOPs, spec sheets, whatever), without re-deriving the retrieval/auth/audit plumbing from scratch.
 
 If you (Claude) are asked to spin up a new agent from this template, or to extend this template itself, read this whole file first.
 
